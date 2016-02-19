@@ -1,0 +1,204 @@
+/**
+ * This function is called when user clicks on sign up button.
+ * store() stores username and password in local storage as (key,value) pair.
+ * Password is hashed and then stored.
+ */
+var store = function() {
+   var usname = document.getElementById("uname");
+ //  var pw = document.getElementById("pw");
+    
+   if(usname.value=="") {   
+        usname.style.borderColor="#d91717";
+        usname.style.boxShadow="0 0 0 0";
+        return false;
+    } else if(pw.value=='') {   
+           pw.style.borderColor="#d91717";
+           pw.style.boxShadow="0 0 0 0";   
+           return false;
+           } else  if(usname.value in localStorage) {
+                     alert('Username already exists');
+                  }  else {
+                     hashedPassword = CryptoJS.SHA256(pw.value); 
+                     localStorage.setItem(usname.value,hashedPassword);
+                     localStorage.setItem("curr",usname.value);
+                     var currN = localStorage.getItem('curr');
+                     var str='Welcome ' + currN + ', Click here to view your to do list';
+                     var res=str.link("todo1.html");
+                     document.getElementById("signUp_form").innerHTML = res;
+                  }
+ }
+
+
+
+/**
+ * This function is called when user clicks on sign in button.
+ * It gets the username from text field and checks if it exist in local storage.
+ * If exists it checks for password.
+ */
+var check = function() {
+
+    var usernam = document.getElementById("userName");
+    var userp1 = document.getElementById("userPw");
+    userp=CryptoJS.SHA256(userp1.value);
+    
+    if(usernam.value=='') {
+       usernam.style.boxShadow="0 0 0 0";
+       usernam.style.borderColor="#d91717";
+        return false;
+    } else if(userp1.value=='') {
+              userp1.style.boxShadow="0 0 0 0";
+              userp1.style.borderColor="#d91717";
+              return false;
+                
+           } else {
+            
+                if(usernam.value in localStorage) {
+            
+                  for(var i = 0; i < localStorage.length; i++) {
+                    var key1=localStorage.key(i);
+                    if(usernam.value == key1){
+                       var storedpw = localStorage.getItem(key1);   
+                    }
+                  };
+                  
+                   if(storedpw==userp) {
+                      localStorage.setItem("curr",usernam.value);
+                      var currN = localStorage.getItem('curr');
+                      var str='Welcome '+ currN + ', Click here to view your Notes';
+                      var res=str.link("todo1.html");
+                      document.getElementById("signIn_form").innerHTML = res;
+                   } else {
+                     alert('Password Incorrect');
+                   }
+               } else {
+                 alert('Username not found,please sign up');
+               }
+        
+         
+              }
+ 
+}
+/**
+ * Returns the current User
+ */
+ var user1 = function() {
+       var us=localStorage.getItem("curr");
+       return us;
+ }
+ 
+ /**
+  * User is signed out
+  */
+ var signOut = function() {
+       alert('You are signed out');
+       localStorage.removeItem('curr');
+ }
+ 
+ /**
+  * If user is signed in, user can view his account by clicking on 'My account'.
+  */
+ var myList = function() {
+       if('curr' in localStorage) {
+            var currN = localStorage.getItem('curr');
+            var str='Welcome '+ currN + ', Click here to view your Notes';
+            var res=str.link("todo1.html");
+            document.getElementById("menu1").innerHTML = res;
+         } else {
+           alert('You are not Signed in');
+         }
+ }
+/** 
+ * Items are stored in local storage in a form of array 'todo'+username as the key.
+ * This function returns the array.
+ */
+var getNotes = function() {
+      var notes = new Array;
+      var usern = user1();
+      var notesArray = localStorage.getItem('todo' + usern);
+      if (notesArray !== null) {
+        notes = JSON.parse(notesArray); 
+      }
+      return notes;
+}
+
+/** 
+ * Items are displayed in the form of list.This functions gets the array from local storage
+ * and displays it.
+ * when x or edit buttons are clicked, remove and edit functions are called respectively.
+ */
+var display = function() {
+     var notes = getNotes();
+     var usern = user1();
+     var list1 = '<ul>';
+     for(var i=0; i<notes.length; i++) {
+        list1 += '<li>' + notes[i] + '<button class="edit" id="' + i  + '"></button> <button id="rem" name="remove" class="' + i  + '"></button></li>';
+     };
+     list1 += '</ul>';
+ 
+     document.getElementById('notes').innerHTML = list1;
+ 
+     var buttons = document.getElementsByName('remove');
+     for (var i=0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', remove);
+     };
+    
+     var edit1 = document.getElementsByClassName('edit');
+     for (var j=0; j < edit1.length; j++) {
+        edit1[j].addEventListener('click', edit);
+     };
+}
+ 
+/**
+ * This function is called to add a new item in the array and display it.
+ */
+var add = function() {
+     var task = document.getElementById('task').value;
+     if(task=='') {
+            alert('please add an item');
+     } else {
+       var notes = getNotes();
+       var usern = user1();
+       notes.push(task);
+       localStorage.setItem('todo'+usern, JSON.stringify(notes));
+       display();
+       document.getElementById('task').value="";
+    }
+    return false;
+}
+
+/**
+ * prompt box will appear when edit icon is clicked and user can edit an item.
+ */
+var edit = function() {
+     var notes1=getNotes();
+     var usern = user1();
+     var id1 = this.getAttribute('id');
+     var ed= prompt('Edit',notes1[id1]);
+     if(ed==''){
+        alert('please add an item');
+     } else {
+       notes1[id1]=ed;
+       localStorage.setItem('todo'+usern, JSON.stringify(notes1));
+       display();
+     }
+     return false;
+ }
+
+/**
+ * This function removes an item from the array.
+ */
+var remove = function() {
+     var id = this.getAttribute('class');
+     var notes = getNotes();
+     var usern = user1();
+     notes.splice(id, 1);
+     localStorage.setItem('todo'+usern, JSON.stringify(notes));
+     display();
+     return false;
+}
+ var dispNotes = function() {
+      document.getElementById('add').addEventListener('click', add);
+      display();
+ }
+
+    
