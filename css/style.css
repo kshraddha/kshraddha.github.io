@@ -121,7 +121,7 @@ a:focus {
     font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
 }
 
-#userName, #userPw, #uname, #pw{
+#userName, #userPw, #username, #password{
     padding: 0.7em 1.2em;
     margin-top: 0.7em;
     display: inline-block;
@@ -130,7 +130,7 @@ a:focus {
     outline: none;    
 }
 
-#userName, #userPw, #uname, #pw, input[type=submit]{
+#userName, #userPw, #username, #password, input[type=submit]{
      box-sizing:border-box;
      width: 100% ;
      max-width: 100%;
@@ -138,13 +138,13 @@ a:focus {
 }
 
 
-#userName:focus, #userPw:focus, #uname:focus, #pw:focus, #task:focus{
+#userName:focus, #userPw:focus, #username:focus, #password:focus, #task:focus{
     border-color: #FF9933;
     box-shadow: 0 0 5px #FF9933;
 }
 
 #blankUser, #blankPassword, #userNone, #passIncorrect{
-    color: #d91717;
+    color: red;
     font-size: 0.9em;
     float:left;
     margin-top: 0;
@@ -270,7 +270,7 @@ a:focus {
 }
 
 #task{
-    width: 25em;
+    width: 22em;
     height: 2.6em;
     overflow: hidden;
     margin-bottom: 0;
@@ -292,7 +292,7 @@ a:focus {
 
 
 #rem{ 
-    background: url(../images/del.gif) no-repeat center;
+    background: url(../images/del1.gif) no-repeat center;
     background-color: white;
     height: 2.8em;
     width: 1.4em;
@@ -304,6 +304,9 @@ a:focus {
     float: right;
 }
 
+#rem:hover{
+     background: url(../images/del.gif) no-repeat center;
+}
 
 .edit{
     background-color: #F8F8F8;
@@ -340,8 +343,8 @@ a:focus {
 }
 
 #mymap{
-    height: 18em;
-    width: 22em;
+    height: 16em;
+    width: 20em;
     margin-left: auto;
     margin-right: auto;
     display: block;

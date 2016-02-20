@@ -22,27 +22,27 @@ function index() {
  */
 
 function store() {
-    var userName = document.getElementById("uname");
-    var password = document.getElementById("pw");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
     var blankUser = document.getElementById('blankUser');
     var blankPass = document.getElementById('blankPassword');
     var userNone = document.getElementById('userNone');
     blankUser.style.display = "none";
     blankPass.style.display = "none";
     userNone.style.display = "none";
-    if (userName.value == "") {   
+    if (username.value == "") {   
         blankUser.style.display = "block";
         return false;
     } else if (password.value == "") {   
         blankPass.style.display = "block";
         return false;
-    } else if (userName.value in localStorage) {
+    } else if (username.value in localStorage) {
         userNone.style.display = "block";
         return false;
     } else {
         hashedPassword = CryptoJS.SHA256(password.value); 
-        localStorage.setItem(userName.value, hashedPassword);
-        localStorage.setItem("curr", userName.value);
+        localStorage.setItem(username.value, hashedPassword);
+        localStorage.setItem("curr", username.value);
         window.location.href = "notes.html";
         return false;
     }
@@ -55,7 +55,7 @@ function store() {
  * If exists it checks for password.
  */
 function check() {
-    var usernam = document.getElementById("userName");
+    var username = document.getElementById("userName");
     var password = document.getElementById("userPw");
     HPassword=CryptoJS.SHA256(password.value);
     var blankUser = document.getElementById('blankUser');
@@ -66,33 +66,29 @@ function check() {
     blankPass.style.display = "none";
     passInC.style.display = "none";
     userNone.style.display = "none";
-    if (usernam.value == '') {
+    if (username.value == '') {
         blankUser.style.display = "block";
-        usernam.style.marginBottom = "0";
         return false;
     } else if (password.value == '') {
         blankPass.style.display = "block";
-        password.style.marginBottom = "0";
         return false;
-    } else if (usernam.value in localStorage) {
+    } else if (username.value in localStorage) {
         for (var i = 0; i < localStorage.length; i++) {
             var key1=localStorage.key(i);
-            if (usernam.value == key1) {
+            if (username.value == key1) {
                 var storedpw = localStorage.getItem(key1);   
             }
         }   
         if (storedpw == HPassword) {
-            localStorage.setItem("curr", usernam.value);
+            localStorage.setItem("curr", username.value);
             window.location.href = "notes.html";
             return false;
          } else {
              passInC.style.display = "block";
-             password.style.marginBottom = "0";
              return false;
          }
     } else {
         userNone.style.display = "block";
-        usernam.style.marginBottom = "0";
         return false;
     }
     return false;
@@ -132,8 +128,8 @@ function List() {
  */
 function getNotes() {
     var notes = new Array;
-    var usern = getCurrUser();
-    var notesArray = localStorage.getItem('note' + usern);
+    var curruser = getCurrUser();
+    var notesArray = localStorage.getItem('note' + curruser);
     if (notesArray !== null) {
         notes = JSON.parse(notesArray); 
     }
@@ -146,12 +142,11 @@ function getNotes() {
  */
 function display() {
     var notes = getNotes();
-    var usern = getCurrUser();
     var list1 = '<form>';
     for(var i=0; i<notes.length; i++) {
        var a = notes[i];
        var decrypted=CryptoJS.AES.decrypt(a, "abc").toString(CryptoJS.enc.Utf8);
-       list1 += '<button id="rem" name="remove" class="' + i  + '"></button><div style="overflow: hidden"><textarea class="edit" id="' + i + '">'+ decrypted +'</textarea></div>';
+       list1 += '<button id="rem" title="Delete" name="remove" class="' + i  + '"></button><div style="overflow: hidden"><textarea class="edit" id="' + i + '">'+ decrypted +'</textarea></div>';
     }
     list1 += '</form>';
     document.getElementById('notes').innerHTML = list1;
@@ -206,11 +201,11 @@ function add() {
         return false;
     } else {
         var notes = getNotes();
-        var usern = getCurrUser();
+        var curruser = getCurrUser();
         var task1 = CryptoJS.AES.encrypt(task, "abc");
         var task2 = CryptoJS.AES.decrypt(task1, "abc").toString(CryptoJS.enc.Utf8);
         notes.unshift(task1.toString());
-        localStorage.setItem('note'+usern, JSON.stringify(notes));
+        localStorage.setItem('note' + curruser, JSON.stringify(notes));
         display();
         document.getElementById('task').value="";
         document.getElementById('task').style.height = "2.6em";
@@ -228,20 +223,20 @@ function saving() {
  */
 function edit() {
     var notes1 = getNotes();
-    var usern = getCurrUser();
+    var curruser = getCurrUser();
     var id1 = this.getAttribute('id');
     var ed1 = notes1[id1];
     var ed = document.getElementById(id1).value;
     if (ed == '') {
         
         notes1[id1] = ed1.toString();
-        localStorage.setItem('note'+usern, JSON.stringify(notes1));
+        localStorage.setItem('note' + curruser, JSON.stringify(notes1));
         display();
         document.getElementById('save').style.visibility = "hidden";
     } else {
         var ed2 = CryptoJS.AES.encrypt(ed, "abc");
         notes1[id1] = ed2.toString();
-        localStorage.setItem('note'+usern, JSON.stringify(notes1));
+        localStorage.setItem('note' + curruser, JSON.stringify(notes1));
         display();
         document.getElementById('save').innerHTML = 'Saved';
         document.getElementById('save').style.visibility = "visible";
@@ -257,9 +252,9 @@ function edit() {
 function remove() {
     var id = this.getAttribute('class');
     var notes = getNotes();
-    var usern = getCurrUser();
+    var curruser = getCurrUser();
     notes.splice(id, 1);
-    localStorage.setItem('note'+usern, JSON.stringify(notes));
+    localStorage.setItem('note' + curruser, JSON.stringify(notes));
     display();
     return false;
 }
