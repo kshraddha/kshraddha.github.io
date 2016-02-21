@@ -1,23 +1,23 @@
 
-body, html{
+body, html {
     border-style:none;
     margin: 0 0;
     min-height: 100%;
 }
 
-header{
+header {
     margin-bottom: 1em;
     background: linear-gradient(#F0F0F0,#C0C0C0 ) ;
     padding-bottom: 1.5em;
     padding-top: 1.5em;
 }
 
-img{
+img {
     float: left;
     margin-bottom: 1em;
 }
 
-#header1{
+#header1 {
     cursor: pointer;
     border-style:none;
     text-align: left;
@@ -55,7 +55,7 @@ section:focus {
     text-align: center;
 }
 
-.menu{
+.menu {
     border-style:none;
     text-align: center;
     font-size: 1.7em;
@@ -64,13 +64,13 @@ section:focus {
     margin-top: 1.5em;
 }
 
-.menu:focus{
+.menu:focus {
     outline: :none;
     border-style: none;
 }
 
-ul{
-   padding-left: 0;
+ul {
+    padding-left: 0;
     width: 5.7em;
     height: 2em;
     margin: 0 auto;
@@ -86,7 +86,7 @@ ul li {
     text-align: center;
 }
 
-a{
+a {
     text-decoration: none;
     outline: none;
     color:#FF9933;
@@ -103,14 +103,14 @@ a:focus {
     text-decoration: none;
 }
 
-#signUp_form, #signIn_form{
+#signUp_form, #signIn_form {
     margin: 0 auto;
     width: 19em;
     text-align: center;
     align-content: center;
 }
 
-.sign{
+.sign {
     font-size: 2.5em;
     text-align: center;
     outline: none;
@@ -121,7 +121,7 @@ a:focus {
     font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
 }
 
-#userName, #userPw, #username, #password{
+#userName, #userPw, #username, #password {
     padding: 0.7em 1.2em;
     margin-top: 0.7em;
     display: inline-block;
@@ -130,7 +130,7 @@ a:focus {
     outline: none;    
 }
 
-#userName, #userPw, #username, #password, input[type=submit]{
+#userName, #userPw, #username, #password, input[type=submit] {
      box-sizing:border-box;
      width: 100% ;
      max-width: 100%;
@@ -138,12 +138,12 @@ a:focus {
 }
 
 
-#userName:focus, #userPw:focus, #username:focus, #password:focus, #task:focus{
+#userName:focus, #userPw:focus, #username:focus, #password:focus, #task:focus {
     border-color: #FF9933;
     box-shadow: 0 0 5px #FF9933;
 }
 
-#blankUser, #blankPassword, #userNone, #passIncorrect{
+#blankUser, #blankPassword, #userNone, #passIncorrect {
     color: red;
     font-size: 0.9em;
     float:left;
@@ -151,7 +151,7 @@ a:focus {
     display: none;
 }
 
-.button1{
+.button1 {
     border: none;
     background-color: #FF9933;
     font-size: 1.2em;
@@ -182,9 +182,13 @@ a:focus {
     border-style: none;
 }
 
-.click{
+.click {
     color: #888888;
     font-size: 1.2em; 
+}
+
+.click:hover {
+    color: dimgray;
 }
 
 .dropbtn {
@@ -233,28 +237,35 @@ a:focus {
     display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1}
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
 
 .dropbtn:focus {
     outline: none;
     border-style: none;
  }
 
-.show {display:block;}
+.show {
+    display:block;
+}
 
+#drop, #dropC {
+    display: none;
+}
 
-#todo1{
+#note1 {
     border-style: none;
     outline: none;
     margin:1em;
 }
 
-#addNote{
+#addNote {
     align-content: center;
     margin-bottom: 1em;
 }
 
-#add{
+#add {
     background-color: #FF9933;
     font-size: 1em;
     text-align: center;
@@ -269,7 +280,7 @@ a:focus {
     margin-top: 0.3em;
 }
 
-#task{
+#task {
     width: 22em;
     height: 2.6em;
     overflow: hidden;
@@ -285,13 +296,13 @@ a:focus {
     outline: none;    
 }
 
-#save {
-    color:#C0C0C0  ;
+.save {
+    color:#B8B8B8;
     visibility: hidden;
 }
 
 
-#rem{ 
+#rem { 
     background: url(../images/del1.gif) no-repeat center;
     background-color: white;
     height: 2.8em;
@@ -302,13 +313,14 @@ a:focus {
     text-decoration: none;
     border-style: none;
     float: right;
+    margin-top: 1em;
 }
 
-#rem:hover{
+#rem:hover {
      background: url(../images/del.gif) no-repeat center;
 }
 
-.edit{
+.edit {
     background-color: #F8F8F8;
     width: 100%;
     height: 1.5em;
@@ -316,7 +328,7 @@ a:focus {
     border: none;
     white-space: pre-wrap;
     text-decoration: none;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     border-style: none;
     padding:0.5em 0.1em 0 0.5em;
     display: block;
@@ -329,7 +341,7 @@ a:focus {
     background-color:#E8E8E8;
 }
 
-#contact{
+#contact {
     text-align: center;
     align-items: center;
     margin-left: auto;
@@ -337,22 +349,23 @@ a:focus {
     color: #585858;
     border-style: none;
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: serif;
     display: block;
 }
 
-#mymap{
+#mymap {
     height: 16em;
     width: 20em;
     margin-left: auto;
     margin-right: auto;
     display: block;
     margin-top: 1em;
+    margin-bottom: 1em;
     max-width: 100%;
 }
 
-#maphead,#mapbody{
+#maphead,#mapbody {
     margin-bottom: 0;
 }
 
