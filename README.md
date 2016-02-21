@@ -2,65 +2,36 @@
 
 ### Description:
 
- * This is a mobile web app that allows signed in user to create, edit, and
-   view short notes(CRUD operations).
- * Notes are stored using browser local storage.
- * This app is usable on a standard mobile browser.
+ * This is a mobile centric web application to securely manage multi-user notes. 
+ * Signed in users can manage their notes which are stored (post encryption) in browser’s storage.
+ * Application is designed focusing on how users would interact on mobile based interface.
 
 ### Functionalities:
 
  * Sign up(New user)
  * Sign in(Existing user)
- * Password is hashed and stored in local storage
+ * Hashed password stored in local storage
  * Add items to the list
  * Edit items in the list
  * Remove items from the list
- * Items are encrypted and stored in local storage
+ * Items stored in local storage(post encryption)
 
 
 ### Usage:
 
- * Open index.html in a browser.
- * New user can sign up to create an account & existing user can sign in to 
-   access their account.
- * User can add an item by clicking on Add button.
- * User can remove an item by clicking on icon on the right side 
-   of the list.
- * User can edit by clicking on item.
- * To visit homepage user has to click on My Notes on top or on menu 
-   button on top right
+ * Sign up for new user and Sign in for existing user.
+ * Use textbox and Add button to add an item.
+ * Tap on X icon on right side to remove an item.
+ * Tap on an item to edit.
+ 
+### Demo:
+ 
+ [kshraddha.github.io](http://kshraddha.github.io)  
+ or  
+ Open index.html in browser.  
 
 ### Contact:
 
- Shraddha Kabade
- Email: shraddhakabade@gmail.com
- Mobile: (510)557-5582
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ Shraddha Kabade  
+ Email: shraddhakabade@gmail.com  
+ Mobile: (510)557-5582  
