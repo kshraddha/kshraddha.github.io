@@ -141,22 +141,15 @@ function getNotes() {
  * This function resizes the textarea as content is added.
  */
 function textAreaAdjust(a) {
+    a.style.height = '0';
     a.style.height = a.scrollHeight + 'px';
-}
-
-function textAreaAdjust2() {
-    var id1, a;
-    if (event.keyCode == 13) {
-        id1 = this.getAttribute('id');
-        a = document.getElementById(id1);
-        a.style.height = a.scrollHeight + 'px';
-    }
 }
 
 function textAreaAdjust1() {
     var id1, a;
     id1 = this.getAttribute('id');
     a = document.getElementById(id1);
+    a.style.height = '0';
     a.style.height = a.scrollHeight + 'px';
 }
 
@@ -270,8 +263,7 @@ function display() {
         edit1[j].addEventListener('change', edit);
         edit1[j].addEventListener('input', saving);
         textAreaAdjust(edit1[j]);
-        edit1[j].addEventListener('change', textAreaAdjust1);
-        edit1[j].addEventListener('keypress', textAreaAdjust2);
+        edit1[j].addEventListener('input', textAreaAdjust1);
     }
 }
 
