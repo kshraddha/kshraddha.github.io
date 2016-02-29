@@ -36,20 +36,21 @@ function store() {
         username.focus();
         return false;
     } else if (password.value === "") {
-        blankPass.style.display = "block";
-        password.focus();
-        return false;
+               blankPass.style.display = "block";
+               password.focus();  
+               return false;
     } else if (username.value in localStorage) {
-        userNone.style.display = "block";
-        username.focus();
-        return false;
-    } else {
-        hashedPassword = CryptoJS.SHA256(password.value);
-        localStorage.setItem(username.value, hashedPassword);
-        localStorage.setItem("curr", username.value);
-        window.location.href = "notes.html";
-        return false;
-    }
+               userNone.style.display = "block";
+               username.focus(); 
+               return false;
+           } else {
+               hashedPassword = CryptoJS.SHA256(password.value);
+               localStorage.setItem(username.value, hashedPassword);
+               localStorage.setItem("curr", username.value);
+               window.location.href = "notes.html";
+               return false; 
+        }
+    return false;
 }
 
 /**

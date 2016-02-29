@@ -102,11 +102,10 @@ a:focus {
     text-decoration: none;
 }
 
-#signUp_form, #signIn_form {
-    margin: 0 auto;
-    width: 19em;
+#signIn_form, #signUp_form {
+    max-width: 18.5em;
+    margin: auto;
     text-align: center;
-    align-content: center;
 }
 
 .sign {
@@ -136,7 +135,6 @@ a:focus {
      display:inline-block;
 }
 
-
 #userName:focus, #userPw:focus, #username:focus, #password:focus, #task:focus {
     border-color: #FF9933;
     box-shadow: 0 0 5px #FF9933;
@@ -158,7 +156,7 @@ a:focus {
     padding: o.8em 1em;
     cursor: pointer;
     color: white;
-    border-radius: 0.25em;
+    border-radius: 4.1px;
     outline: none;
     text-decoration: none;
     box-shadow: 0 0.22em #FF6600;
@@ -262,6 +260,7 @@ a:focus {
 #addNote {
     align-content: center;
     margin-bottom: 1em;
+    max-width: 20em;
 }
 
 #add {
@@ -281,7 +280,7 @@ a:focus {
 
 #task {
     min-width: 1em;
-    width: 22em;
+    width: 100%;
     height: 2.6em;
     overflow: hidden;
     margin-bottom: 0;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Sign In</title>
-    <script src="js/myNotes.js"></script>
+    <script src="js/mynotes.js"></script>
     <script src="js/sha256.js"></script>
     <script src="js/aes.js"></script>
 </head>
@@ -16,14 +16,14 @@
     </header>
     <form id="signIn_form"> 
         <h1 class="sign">Sign in</h1><br>
-        <input id="userName" type="text" placeholder="Username" value=""  autofocus /><br>
+        <input id="userName" type="text" placeholder="Username" value=""  autofocus size="1" /><br>
         <label id="blankUser">Enter Username</label>
         <label id="userNone">Username not found</label><br>
         <input id="userPw" type="password" placeholder="Password" value=""  /><br>
         <label id="blankPassword">Enter password</label>
         <label id="passIncorrect">Password Incorrect</label><br><br>
         <input id="login_btn" type="submit" class="button1" value="Sign in" onClick="return check();getCurrUser();"/> <br><br>
-        <a href="signUp.html" class="click" target="_self">New user</a>
+        <a href="signup.html" class="click" target="_self">New user</a>
     </form> 
 </body>
 </html>
