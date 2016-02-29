@@ -1,106 +1,8 @@
-/**
- * This function is triggered when index.html is loaded
- */
-function index() {
-    // If user is signed in
-    if ("curr" in localStorage) {
-        var user = localStorage.getItem("curr");
-        document.getElementById("menu1").style.display = "none";
-        document.getElementById("menu2").style.display = "block";
-        document.getElementById("curruser").innerHTML = user;
-        document.getElementById("curruser").style.display = "inline-block";
-    } else {
-        document.getElementById("menu1").style.display = "block";
-        document.getElementById("menu2").style.display = "none";
-    }
-}
-
-/**
- * This function is called when user clicks on sign up button.
- * store() stores username and password in local storage as (key,value) pair.
- * Password is hashed and then stored.
- */
-
-function store() {
-    var username, password, blankUser, blankPass, userNone, hashedPassword;
-    username = document.getElementById("username");
-    password = document.getElementById("password");
-    blankUser = document.getElementById('blankUser');
-    blankPass = document.getElementById('blankPassword');
-    userNone = document.getElementById('userNone');
-    blankUser.style.display = "none";
-    blankPass.style.display = "none";
-    userNone.style.display = "none";
-    if (username.value === "") {
-        blankUser.style.display = "block";
-        username.focus();
-        return false;
-    } else if (password.value === "") {
-        blankPass.style.display = "block";
-        password.focus();
-        return false;
-    } else if (username.value in localStorage) {
-        userNone.style.display = "block";
-        username.focus();
-        return false;
-    } else {
-        hashedPassword = CryptoJS.SHA256(password.value);
-        localStorage.setItem(username.value, hashedPassword);
-        localStorage.setItem("curr", username.value);
-        window.location.href = "notes.html";
-        return false;
-    }
-}
-
-/**
- * This function is called when user clicks on sign in button.
- * It gets the username from text field and checks if it exist in local storage.
- * If exists it checks for password.
- */
-function check() {
-    var username, password, blankUser, blankPass, userNone, passInC, HPassword, i, key1, storedpw;
-    username = document.getElementById("userName");
-    password = document.getElementById("userPw");
-    HPassword = CryptoJS.SHA256(password.value);
-    blankUser = document.getElementById('blankUser');
-    blankPass = document.getElementById('blankPassword');
-    passInC = document.getElementById('passIncorrect');
-    userNone = document.getElementById('userNone');
-    blankUser.style.display = "none";
-    blankPass.style.display = "none";
-    passInC.style.display = "none";
-    userNone.style.display = "none";
-    if (username.value === '') {
-        blankUser.style.display = "block";
-        username.focus();
-        return false;
-    } else if (password.value === '') {
-        blankPass.style.display = "block";
-        password.focus();
-        return false;
-    } else if (username.value in localStorage) {
-        for (i = 0; i < localStorage.length; i++) {
-            key1 = localStorage.key(i);
-            if (username.value == key1) {
-                storedpw = localStorage.getItem(key1); 
-            }
-        } 
-        if (storedpw == HPassword) {
-            localStorage.setItem("curr", username.value);
-            window.location.href = "notes.html";
-            return false;
-        } else {
-            passInC.style.display = "block";
-            password.focus();
-            return false;
-        }
-    } else {
-        userNone.style.display = "block";
-        username.focus();
-        return false;
-    }
-}
-
+window.addEventListener("load", List);
+document.getElementById("notesDrop").addEventListener("click", menu);
+document.getElementById("notesSignout").addEventListener("click", signOut);
+document.getElementById("task").addEventListener("input", textAreaAdjust3);
+document.getElementById("task").addEventListener("blur", textareaTask);
 /**
  * Returns the current User
  */
@@ -110,17 +12,6 @@ function getCurrUser() {
     return user;
 }
 
- /**
-  * If user is signed in, user can view his account by clicking on 'My List'.
-  */
-function myList() {
-    if ('curr' in localStorage) {
-        var currN = localStorage.getItem('curr');
-        window.location.href = "notes.html";
-    } else {
-        window.location.href = "index.html";
-    }
-}
 
 /** 
  * Items are stored in local storage in a form of array 'note'+username as the key.
@@ -143,6 +34,11 @@ function getNotes() {
 function textAreaAdjust(a) {
     a.style.height = '0';
     a.style.height = a.scrollHeight + 'px';
+}
+
+function textAreaAdjust3() {
+    this.style.height = '0';
+    this.style.height = this.scrollHeight + 'px';
 }
 
 function textAreaAdjust1() {

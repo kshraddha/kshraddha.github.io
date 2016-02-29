@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile web app</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <script src="js/myNotes.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/aes.js"></script>
 </head>
-<body id='b1' onload="index()">
+<body id='b1'>
 <header>
     <img src="images/ico.gif" alt="logo for mobile web app" height=38 width=43>
     <a href="index.html" id="header1">My Notes</a>
     <h4 id="curruser"></h4>
 </header>
-    <section  id="simple">
+    <section id="simple">
         <h1>The simplest way to remember everything.</h1>
     </section>
     <section id ='menu1' class="menu">
         <ul>
             <li>
-                <a id="signin" href="signIn.html" target="_self" >Sign in</a>
+                <a id="signin" href="signIn.html" target="_self">Sign in</a>
             </li><br>
             <li>
                 <a id="signup" href="signUp.html" target="_self">Sign Up</a>
@@ -33,16 +33,17 @@
     <section id = "menu2" class="menu">
         <ul>
             <li>
-                <a href="notes.html" onclick="return myList()" target="_self">My List</a>
+                <a href="notes.html" id="mylist" target="_self">My List</a>
             </li><br>
             <li>
-                <a href = "index.html" onclick="signOut()" target="_self">Sign Out</a>
+                <a href = "index.html" id="signout" target="_self">Sign Out</a>
             </li><br>
             <li>
                 <a href="contact.html" target="_self">Contact us</a>
             </li><br>
         </ul>
     </section>
+    
 </body>
 </html>
 
