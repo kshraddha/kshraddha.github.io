@@ -1,22 +1,20 @@
 {
-"manifest_version": 2,
-"name": "My Notes",
-"description": "Offline storage of personal notes",
-"version": "1.0",
-"icons": {
-"128": "128.png"
-},
-"app": {
-"launch": {
-"local_path": "index.html"
+  "manifest_version": 2,
+  "name": "Notes",
+  "description": "Offline secure storage of personal notes",
+  "version": "0.2",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "browser_action": {
+    "default_icon": "128.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications",
+    "activeTab"
+  ]
 }
-},
-"permissions": [
-"unlimitedStorage",
-"notifications",
-"https://maps.google.com/*",
-"https://maps.googleapis.com/*"
-],
-"content_security_policy": "script-src 'self' 'unsafe-eval' https://maps.googleapis.com; object-src 'self';"
-}
-

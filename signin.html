@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Sign In</title>
+  <script src="js/sha256.js"></script>
+  <script src="js/aes.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="images/ico.gif" alt="logo for mobile web app" height=28 width=32>
+    <a href="index.html" id="header1" target="_self">Notes</a>
+  </header>
+  <form id="signIn_form">
+    <h1 class="sign">Sign in</h1>
+    <br>
+    <input id="userName" type="text" placeholder="Username" value="" autofocus>
+    <br>
+    <label id="blankUser">Enter username</label>
+    <label id="userNone">Username not found</label>
+    <br>
+    <input id="userPw" type="password" placeholder="Password" value="">
+    <br>
+    <label id="blankPassword">Enter password</label>
+    <label id="passIncorrect">Password incorrect</label>
+    <br>
+    <br>
+    <input id="signIn_btn" type="submit" class="button1" value="Sign in">
+    <br>
+    <br>
+    <a href="signup.html" class="click" target="_self">New user</a>
+  </form>
+  <script src="js/signin.js"></script>
+</body>
+
+</html>

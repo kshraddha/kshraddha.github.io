@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Sign Up</title>
+  <script src="js/sha256.js"></script>
+  <script src="js/aes.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="images/ico.gif" alt="logo for mobile web app" height=28 width=32>
+    <a href="index.html" id="header1" target="_self">Notes</a>
+  </header>
+  <form id="signUp_form" method="get">
+    <h1 class="sign">Sign up</h1>
+    <br>
+    <input id="username" type="text" placeholder="Username" value="" title="" autofocus>
+    <br>
+    <label id="blankUser">Enter username</label>
+    <label id="userNone">Username already exist</label>
+    <br>
+    <input id="password" type="password" placeholder="Password" value="" title="">
+    <br>
+    <label id="blankPassword">Enter password</label>
+    <br>
+    <br>
+    <input id="rgstr_btn" type="submit" class="button1" value="Sign up">
+    <br>
+    <br>
+    <a href="signin.html" class="click" target="_self">Already a member?</a>
+  </form>
+  <script src="js/signup.js"></script>
+</body>
+
+</html>
