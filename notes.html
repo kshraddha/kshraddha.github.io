@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>My Notes</title>
-    <script src="js/sha256.js"></script>
-    <script src="js/aes.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <title>My Notes</title>
+  <script src="js/sha256.js"></script>
+  <script src="js/aes.js"></script>
 </head>
+
 <body onload="List()">
-    <header>
-        <img src="images/ico.gif" alt="logo for mobile web app" height=38 width=43>
-        <a href="index.html" id="header1">My Notes</a>
-        <div class="dropdown">
-            <button onclick="menu()" class="dropbtn"></button>
-            <div id="DropdowmMenu" class="dropdown-content">
-                <label id="user" > </label>
-                <a href="index.html">Home</a>
-                <a href="index.html" onclick="signOut()">Sign out</a>
-                <a href="contact.html">Contact</a>
-            </div>
-       </div>
-    </header>
-    <section id="note1">
+  <header>
+    <img src="images/ico.gif" alt="logo for mobile web app" height=38 width=43>
+    <a href="index.html" id="header1">My Notes</a>
+    <div class="dropdown">
+      <button onclick="menu()" class="dropbtn"></button>
+      <div id="DropdowmMenu" class="dropdown-content">
+        <label id="user"> </label>
+        <a href="index.html">Home</a>
+        <a href="index.html" onclick="signOut()">Sign out</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+  <section id="note1">
     <h1 class="sign">List</h1>
-        <section id='addNote'>
-             <textarea id="task" placeholder="What's on your mind?" oninput="textAreaAdjust(this)" onblur="textareaTask()" autofocus></textarea>  
-             <button id="add">Add</button> 
-        </section>
-   
-        <hr>
-        <div id="notes"></div>
+    <section id='addNote'>
+      <textarea id="task" placeholder="What's on your mind?" oninput="textAreaAdjust(this)" onblur="textareaTask()" autofocus></textarea>
+      <button id="add">Add</button>
     </section>
-    <script src="js/mynotes.js"></script>
+    <hr>
+    <div id="notes"></div>
+  </section>
+  <script src="js/mynotes.js"></script>
 </body>
+
 </html>
- 

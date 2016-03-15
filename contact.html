@@ -1,65 +1,72 @@
 <!Doctype Html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="js/mynotes.js" ></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="js/mynotes.js"></script>
 </head>
+
 <body onload="mapinit();dropdownC();" id='mapbody'>
-    <header id='maphead'>
-        <img src="images/ico.gif" alt="logo for mobile web app" height=40 width=47>
-        <a href="index.html" id="header1" target="_self">My Notes</a>
-        <div id="dropC" class="dropdown">
-            <button onclick="menu()" class="dropbtn"></button>
-            <div id="DropdowmMenu" class="dropdown-content">
-                <label id="user" > </label>
-                <a href="index.html" target="_self">Home</a>
-                <a href="notes.html" target="_self">My List</a>
-                <a href="index.html" onclick="signOut()" target="_self">Sign out</a>
-            </div>
-        </div>
-        <div id="drop" class="dropdown">
-            <button onclick="menu1()" class="dropbtn"></button>
-            <div id="DropdowmMenu1" class="dropdown-content">
-                <a href="index.html" target="_self">Home</a>
-                <a href="signin.html" target="_self">Sign In</a>
-                <a href="signup.html" target="_self">Sign up</a>
-            </div>
-        </div>
-    </header>
-    <section id='contact'>
-        <p>
-            <strong>Shraddha Kabade</strong> <br><br>
-            <b>Email:</b> shraddhakabade@gmail.com<br><br>
-            <b>Mobile:</b> (510) 557-5582
-        </p>
-    </section>
-    <div id="mymap"></div>
+  <header id='maphead'>
+    <img src="images/ico.gif" alt="logo for mobile web app" height=40 width=47>
+    <a href="index.html" id="header1" target="_self">My Notes</a>
+    <div id="dropC" class="dropdown">
+      <button onclick="menu()" class="dropbtn"></button>
+      <div id="DropdowmMenu" class="dropdown-content">
+        <label id="user"> </label>
+        <a href="index.html" target="_self">Home</a>
+        <a href="notes.html" target="_self">My List</a>
+        <a href="index.html" onclick="signOut()" target="_self">Sign out</a>
+      </div>
+    </div>
+    <div id="drop" class="dropdown">
+      <button onclick="menu1()" class="dropbtn"></button>
+      <div id="DropdowmMenu1" class="dropdown-content">
+        <a href="index.html" target="_self">Home</a>
+        <a href="signin.html" target="_self">Sign In</a>
+        <a href="signup.html" target="_self">Sign up</a>
+      </div>
+    </div>
+  </header>
+  <section id='contact'>
+    <div>
+      <div class="name"> <strong>Shraddha Kabade</strong></div>
+      <div>
+        <a class="link" href="mailto: shraddhakabade@gmail.com">Email me</a>
+      </div>
+      <div>
+        <a class="link" href="https://www.linkedin.com/in/shraddhakabade">LinkedIn</a></div>
+      <div><a class="link" href="https://github.com/kshraddha">Github</a></div>
+    </div>
+  </section>
+  <div id="mymap"></div>
 </body>
 <script>
-    function mapinit() {
-        var position = new google.maps.LatLng(37.389,-122.048);
-        var options = {
-            zoom: 10,
-            center:position,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById('mymap'),options);
-        var marker = new google.maps.Marker({
-            position:position,
-            map:map,
-            title:"Address"
-        });
-        var address = 'Sunnyvale, CA';
-        var infowindow = new google.maps.InfoWindow({
-            content: address
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
-        });
-    }
-    </script>
+  function mapinit() {
+    var position = new google.maps.LatLng(37.389, -122.048);
+    var options = {
+      zoom: 10,
+      center: position,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById('mymap'), options);
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      title: "Address"
+    });
+    var address = 'Sunnyvale, CA';
+    var infowindow = new google.maps.InfoWindow({
+      content: address
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+
 </html>

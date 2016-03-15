@@ -1,369 +1,408 @@
-body, html {
-    border-style:none;
-    margin: 0 0;
-    min-height: 100%;
+body,
+html {
+  border-style: none;
+  margin: 0 0;
+  min-height: 100%;
 }
 
 header {
-    margin-bottom: 1em;
-    background: linear-gradient(#F0F0F0,#C0C0C0 ) ;
-    padding-bottom: 1.5em;
-    padding-top: 1.5em;
+  margin-bottom: 1em;
+  background: linear-gradient(#F0F0F0, #C0C0C0);
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  padding-left: 1em;
 }
 
 img {
-    float: left;
-    margin-bottom: 1em;
+  float: left;
+  margin-bottom: 1em;
 }
 
 #header1 {
-    cursor: pointer;
-    border-style:none;
-    text-align: left;
-    font-size: 1.8em;
-    text-decoration: none;
-    color:#585858;
-    font-family: sans-serif;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 500;
+  cursor: pointer;
+  border-style: none;
+  text-align: left;
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #585858;
+  font-family: sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 500;
 }
 
 section:focus {
-    border-style: none;
-    text-decoration: none;
+  border-style: none;
+  text-decoration: none;
 }
 
 #curruser {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #585858;
-    float: right;
-    margin-right: 0.5em;
-    margin-top: 0.17em;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #585858;
+  float: right;
+  margin-right: 0.5em;
+  margin-top: 0.17em;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
 }
 
-#simple, h1 {
-    margin: 0.5em;
-    font-size: 1.4em;
-    color: #585858;
-    font-weight: 300;
-    font-family:'webfont_light',Helvetica,Arial,sans-serif;
-    text-align: center;
+#simple,
+h1 {
+  margin: 0.5em;
+  font-size: 1.4em;
+  color: #585858;
+  font-weight: 300;
+  font-family: 'webfont_light', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 .menu {
-    border-style:none;
-    text-align: center;
-    font-size: 1.7em;
-    font-style: normal;
-    text-decoration: none;
-    margin-top: 1.5em;
+  border-style: none;
+  text-align: center;
+  font-size: 1.7em;
+  font-style: normal;
+  text-decoration: none;
+  margin-top: 1.5em;
 }
 
 .menu:focus {
-    outline: :none;
-    border-style: none;
+  outline: : none;
+  border-style: none;
 }
 
 ul {
-    padding-left: 0;
-    width: 5.7em;
-    height: 2em;
-    margin: 0 auto;
+  padding-left: 0;
+  width: 5.7em;
+  height: 2em;
+  margin: 0 auto;
 }
 
 ul li {
-    list-style-type: none;
-    background-color: #fcfcfc;
-    width :100%;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    border: #f1f1f1 solid 1px;
-    text-align: center;
+  list-style-type: none;
+  background-color: #fcfcfc;
+  width: 100%;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border: #f1f1f1 solid 1px;
+  text-align: center;
 }
 
 a {
-    text-decoration: none;
-    outline: none;
-    color:#FF9933;
-    margin: 0.25em;
-    text-align: center;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
+  text-decoration: none;
+  outline: none;
+  color: #FF9933;
+  margin: 0.25em;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
 }
 
 a:focus {
-    outline: :none;
-    border-style: none;
-    text-decoration: none;
+  outline: : none;
+  border-style: none;
+  text-decoration: none;
 }
 
-#signIn_form, #signUp_form {
-    max-width: 18.5em;
-    margin: auto;
-    text-align: center;
+#signIn_form,
+#signUp_form {
+  max-width: 18.5em;
+  margin: auto;
+  text-align: center;
 }
 
 .sign {
-    font-size: 2.5em;
-    text-align: center;
-    outline: none;
-    font-weight: 450;
-    text-decoration: none;
-    color:#FF9933 ;
-    border-style:none;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
+  font-size: 2.5em;
+  text-align: center;
+  outline: none;
+  font-weight: 450;
+  text-decoration: none;
+  color: #FF9933;
+  border-style: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", serif;
 }
 
-#userName, #userPw, #username, #password {
-    padding: 0.7em 1.2em;
-    margin-top: 0.7em;
-    display: inline-block;
-    border: 1.2px solid #ccc;
-    border-radius: 0.36em;
-    outline: none;    
+#userName,
+#userPw,
+#username,
+#password {
+  padding: 0.7em 1.2em;
+  margin-top: 0.7em;
+  display: inline-block;
+  border: 1.2px solid #ccc;
+  border-radius: 0.36em;
+  outline: none;
 }
 
-#userName, #userPw, #username, #password, input[type=submit] {
-     box-sizing:border-box;
-     width: 100% ;
-     max-width: 100%;
-     display:inline-block;
+#userName,
+#userPw,
+#username,
+#password,
+input[type=submit] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
 }
 
-#userName:focus, #userPw:focus, #username:focus, #password:focus, #task:focus {
-    border-color: #FF9933;
-    box-shadow: 0 0 5px #FF9933;
+#userName:focus,
+#userPw:focus,
+#username:focus,
+#password:focus,
+#task:focus {
+  border-color: #FF9933;
+  box-shadow: 0 0 5px #FF9933;
 }
 
-#blankUser, #blankPassword, #userNone, #passIncorrect {
-    color: red;
-    font-size: 0.9em;
-    float:left;
-    margin-top: 0;
-    display: none;
+#blankUser,
+#blankPassword,
+#userNone,
+#passIncorrect {
+  color: red;
+  font-size: 0.9em;
+  float: left;
+  margin-top: 0;
+  display: none;
 }
 
 .button1 {
-    border: none;
-    background-color: #FF9933;
-    font-size: 1.2em;
-    text-align: center;
-    padding: o.8em 1em;
-    cursor: pointer;
-    color: white;
-    border-radius: 4.1px;
-    outline: none;
-    text-decoration: none;
-    box-shadow: 0 0.22em #FF6600;
-    border-style: none;
-    height: 1.8em;
-    margin-top: 0;   
+  border: none;
+  background-color: #FF9933;
+  font-size: 1.2em;
+  text-align: center;
+  padding: o.8em 1em;
+  cursor: pointer;
+  color: white;
+  border-radius: 4.1px;
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 0.22em #FF6600;
+  border-style: none;
+  height: 1.8em;
+  margin-top: 0;
 }
 
 .button1:hover {
-    background-color: #FF9900;
+  background-color: #FF9900;
 }
 
 .button1:active {
-    background-color: #FF9900;
-    box-shadow: 0 0.27em #FF9900;
-    transform: translateY(0.25em);
+  background-color: #FF9900;
+  box-shadow: 0 0.27em #FF9900;
+  transform: translateY(0.25em);
 }
+
 .button1:focus {
-    outline: :none;
-    border-style: none;
+  outline: : none;
+  border-style: none;
 }
 
 .click {
-    color: #888888;
-    font-size: 1.2em; 
+  color: #888888;
+  font-size: 1.2em;
 }
 
 .click:hover {
-    color: dimgray;
+  color: dimgray;
 }
 
 .dropbtn {
-    background: url(../images/menu.png) no-repeat center;
-    height: 2em;
-    width: 2em;
-    border: none;
-    cursor: pointer;
-    margin-right: 1em;
+  background: url(../images/menu.png) no-repeat center;
+  height: 2em;
+  width: 2em;
+  border: none;
+  cursor: pointer;
+  margin-right: 1em;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    float: right;
+  position: relative;
+  display: inline-block;
+  float: right;
 }
 
 .dropdown-content {
-    border-radius: 0.5em;
-    margin-right: 0.95em;
-    right: 0;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 5em;
-    overflow: auto;
-    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+  border-radius: 0.5em;
+  margin-right: 0.95em;
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 5em;
+  overflow: auto;
+  box-shadow: 0em 0.5em 1em 0em rgba(0, 0, 0, 0.2);
 }
 
 #user {
-    font-size: 1.2em;
-    background-color:darkgray;
-    color: white;
-    min-width: 5em;
-    text-align: center;
-    padding:0.2em;
-    text-decoration: none;
-    display: block;
+  font-size: 1.2em;
+  background-color: darkgray;
+  color: white;
+  min-width: 5em;
+  text-align: center;
+  padding: 0.2em;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown-content a {
-    color:#585858;
-    font-size: 1em;
-    padding:0;
-    text-decoration: none;
-    display: block;
+  color: #585858;
+  font-size: 1em;
+  padding: 0;
+  text-decoration: none;
+  display: block;
 }
 
 .dropdown a:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .dropbtn:focus {
-    outline: none;
-    border-style: none;
- }
-
-.show {
-    display:block;
+  outline: none;
+  border-style: none;
 }
 
-#drop, #dropC {
-    display: none;
+.show {
+  display: block;
+}
+
+#drop,
+#dropC {
+  display: none;
 }
 
 #note1 {
-    border-style: none;
-    outline: none;
-    margin:1em;
+  border-style: none;
+  outline: none;
+  margin: 1em;
 }
 
 #addNote {
-    align-content: center;
-    margin-bottom: 1em;
-    max-width: 20em;
+  align-content: center;
+  margin-bottom: 1em;
+  max-width: 20em;
 }
 
 #add {
-    background-color: #FF9933;
-    font-size: 1em;
-    text-align: center;
-    padding: 0.5em 0.7em;
-    cursor: pointer;
-    color:white;
-    outline: none;
-    border-style: none;
-    text-decoration: none;
-    width: 3.6em;
-    display: block;
-    margin-top: 0.3em;
+  background-color: #FF9933;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border-style: none;
+  text-decoration: none;
+  width: 3.6em;
+  display: block;
+  margin-top: 0.3em;
 }
 
 #task {
-    min-width: 1em;
-    width: 100%;
-    height: 2.6em;
-    overflow: hidden;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-right: 0.5em;
-    resize: none;
-    display: block;
-    padding: 0.7em 1.2em;
-    border: 1.2px solid #ccc;
-    border-radius: 0.36em;
-    box-sizing:border-box;
-    outline: none;    
+  min-width: 1em;
+  width: 100%;
+  height: 2.6em;
+  overflow: hidden;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 0.5em;
+  resize: none;
+  display: block;
+  padding: 0.7em 1.2em;
+  border: 1.2px solid #ccc;
+  border-radius: 0.36em;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .save {
-    color:#B8B8B8;
-    visibility: hidden;
+  color: #B8B8B8;
+  visibility: hidden;
 }
 
-
-#rem { 
-    background: url(../images/del1.gif) no-repeat center;
-    background-color: white;
-    height: 2.8em;
-    width: 1.4em;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    border-style: none;
-    float: right;
-    margin-top: 1em;
+#rem {
+  background: url(../images/del1.gif) no-repeat center;
+  background-color: white;
+  height: 2.8em;
+  width: 1.4em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: none;
+  float: right;
+  margin-top: 1em;
 }
 
 #rem:hover {
-     background: url(../images/del.gif) no-repeat center;
+  background: url(../images/del.gif) no-repeat center;
 }
 
 .edit {
-    background-color: #F8F8F8;
-    width: 100%;
-    height: 1.5em;
-    outline: none;
-    border: none;
-    white-space: pre-wrap;
-    text-decoration: none;
-    margin-bottom: 0.5em;
-    border-style: none;
-    padding:0.5em 0.1em 0 0.5em;
-    display: block;
-    overflow: hidden;
-    resize: none;
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 1.5em;
+  outline: none;
+  border: none;
+  white-space: pre-wrap;
+  text-decoration: none;
+  margin-bottom: 0.5em;
+  border-style: none;
+  padding: 0.5em 0.1em 0 0.5em;
+  display: block;
+  overflow: hidden;
+  resize: none;
 }
-.edit:focus,.edit:hover {
-    outline: none;
-    border-style: none;
-    background-color:#E8E8E8;
+
+.edit:focus,
+.edit:hover {
+  outline: none;
+  border-style: none;
+  background-color: #E8E8E8;
 }
 
 #contact {
-    text-align: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    color: #585858;
-    border-style: none;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-family: serif;
-    display: block;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #585858;
+  border-style: none;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: serif;
+  display: block;
+  height: 200px;
 }
 
 #mymap {
-    height: 16em;
-    width: 20em;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    max-width: 100%;
+  height: 16em;
+  width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 100%;
 }
 
-#maphead,#mapbody {
-    margin-bottom: 0;
+#maphead,
+#mapbody {
+  margin-bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1.2px solid #FF9933;
+  border-radius: 4px;
+}
+
+#contact div {
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.name {
+  padding-top: 10px;
 }
