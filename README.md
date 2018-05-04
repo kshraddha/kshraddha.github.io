@@ -7,5 +7,5 @@
  * This application is designed focusing on how users would interact on mobile based interface.
  
 ### Demo:
- * [Chrome extension] (https://bit.ly/1pEmtE0) 
+ * [Chrome extension](https://bit.ly/1pEmtE0) 
  * [kshraddha.github.io/notes](http://kshraddha.github.io/notes) 
